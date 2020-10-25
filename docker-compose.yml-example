@@ -9,6 +9,6 @@ services:
     volumes:
       - "./test:/var/www"
     environment:
-      XDEBUG_CONFIG: ${XDEBUG_CONFIG}
+      CUSTOM_SERVER_NAME: "mysite.loc"
 
 
