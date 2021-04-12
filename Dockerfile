@@ -12,9 +12,9 @@ ARG PHP_VERSION=${PHP_VERSION}
 # START PHP Configuration
 RUN cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
 
+RUN sed -e 's/;error_log = php_errors.log/error_log = \/var\/log\/apache2\/php_error.log/' -i /usr/local/etc/php/php.ini
 RUN sed -e 's/display_errors = Off/display_errors = On/' -i /usr/local/etc/php/php.ini
 RUN sed -e 's/display_startup_errors = Off/display_startup_errors = On/' -i /usr/local/etc/php/php.ini
-RUN sed -e 's/;error_log = php_errors.log/error_log = \/var\/log\/apache2\/php_error.log/' -i /usr/local/etc/php/php.ini
 
 # END PHP Configuration
 
